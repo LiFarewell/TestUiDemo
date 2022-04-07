@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             switch (msg.what) {
                 case 1:
-                    Log.d("time", "run: alarm");
+
                     Intent intent1 = new Intent("android.example.change");
                     alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                     pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, intent1, PendingIntent.FLAG_NO_CREATE);
@@ -108,8 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
 
                             alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, start, repeat, pendingIntent);
-                            Log.d("time", "run: 3");
-                            Log.d("time", "run: " + SystemClock.elapsedRealtime());
+
                             Toast.makeText(MainActivity.this, "到了这里", Toast.LENGTH_SHORT).show();
                             if (textView.getText().equals("现在是晚上")) {
                                 textView.setText("现在是早上");

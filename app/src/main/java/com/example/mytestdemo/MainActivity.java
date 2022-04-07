@@ -65,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                  intentFilter  = new IntentFilter("android.example.change");
                 registerReceiver(myReceiver,intentFilter);
-//                Intent intent = new Intent(MainActivity.this,AlarmServer.class);
-//                Log.d("time", "onClick: onclick");
-//                startService(intent);
+
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
